@@ -1,0 +1,44 @@
+[
+    {
+        "route_name": "Lagankhel-Lamatar",
+        "stoppages": [
+            "Lagankhel",
+            "Gwarko Chowk",
+            "Imadol Bus Stop",
+            "Tikathali",
+            "Siddhipur",
+            "Lubhu Bus Stop",
+            "Lamatar Bus Stopn"
+        ]
+    },
+    {
+        "route_name": "Lagankhel-Chapagaun",
+        "stoppages": [
+            "Chapagaun",
+            "Bajra Barahi Temple Stop",
+            "Tutepani",
+            "Satdobato",
+            "Lalitpur Industrial Estate",
+            "Batuk Bhairav",
+            "Lagankhel Stop"
+        ]
+    },
+    {
+        "route_name": "Lagankhel-Tikabhairab",
+        "stoppages": [
+            "Lagankhel",
+            "Kuamaripati",
+            "Jawalakhel",
+            "Ekantakuna",
+            "Nakhu",
+            "Bhaisepati",
+            "Sainbu",
+            "Khokana",
+            "Bungamati",
+            "Godawari",
+            "Chhampi",
+            "Dukuchhap",
+            "Tikabhairab"
+        ]
+    }
+]

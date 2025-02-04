@@ -1,0 +1,44 @@
+[
+    {
+        "route_name": "Suryabinayak-Sanga",
+        "stoppages": [
+            "Suryabinayak",
+            "Adarsha",
+            "Jagati",
+            "Sipadol",
+            "Bhatedhikuro",
+            "Nalinchowk",
+            "Palase",
+            "Sanga"
+        ]
+    },
+    {
+        "route_name": "Chayamasingh-Nala",
+        "stoppages": [
+            "Chayamsingh",
+            "Tathali Nala Bus Stop",
+            "Phaidoko Bus Stop",
+            "Gothalechaur",
+            "Hanuman Chowk Bus Stop",
+            "Nalachhap",
+            "Ganesh Mandir",
+            "Army Barrack Bus Stop",
+            "Sera Bazar Bus Stop",
+            "Nala Bus Stop"
+        ]
+    },
+    {
+        "route_name": "KamalBinayak-Nagarkot",
+        "stoppages": [
+            "Kamalbinayak",
+            "Dhungedhara",
+            "Bhadrakali Bus Stop",
+            "Kharipati Bus Stop",
+            "Telkot",
+            "Bastola Gaun Bus Stop",
+            "Pipalbot Bus Stop",
+            "Gadgade Bus Stop",
+            "Nagarkot"
+        ]
+    }
+]
