@@ -17,6 +17,10 @@ p {
 li {
   list-style: none;
 }
+button {
+  padding: 1.2rem;
+  border-radius: 1.3rem;
+}
 
 /* navbar section */
 header {
@@ -52,6 +56,63 @@ nav {
 }
 
 /* end */
+
+/* search start*/
+.details .container .search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4rem;
+  width: 100%;
+  /* background-color: #075985; */
+  padding: 1.3rem;
+  border-radius: 2rem;
+  gap: 3rem;
+
+  & .input {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    & input {
+      border-radius: 1.3rem;
+      padding: 0.4rem;
+      letter-spacing: 0.1rem;
+      outline: none;
+    }
+
+    & input:focus {
+      outline: 1.6px solid #000;
+    }
+  }
+
+  & p {
+    /* color: white; */
+    letter-spacing: 0.11rem;
+    font-size: 1.6rem;
+  }
+
+  & .origin {
+    display: flex;
+    gap: 1rem;
+  }
+
+  & .destination {
+    display: flex;
+    gap: 1rem;
+  }
+
+  button{
+    max-width: 10rem;
+    background-color: #000;
+    color: white;
+    letter-spacing: 0.11rem;
+    position: relative;
+    left: 40%;
+    cursor: pointer;
+    /* margin: auto; */
+  }
+}
+/* search end*/
 
 /* hero section */
 
@@ -172,18 +233,17 @@ nav {
     line-height: 1.5rem;
   }
 
-  & .fare{
+  & .fare {
     display: flex;
     flex-direction: column;
 
-    & P{
+    & P {
       padding: 0.4rem 1.3rem;
     }
-  
   }
 }
 
-.details .container .copyright{
+.details .container .copyright {
   display: flex;
   margin-top: 5rem;
   align-items: center;

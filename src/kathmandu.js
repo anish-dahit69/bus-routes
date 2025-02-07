@@ -5,8 +5,8 @@ const routes = document.querySelector(".routes-details");
 const clone = document.getElementById("clone");
 
 const showRoutes = (busRoutes) => {
+  routes.innerHTML = ""; // Clear previous routes
   busRoutes.forEach((curElem) => {
-    console.log(curElem);
     const { route_name, stoppages } = curElem;
 
     const routesClone = document.importNode(clone.content, true);
@@ -28,5 +28,15 @@ const showRoutes = (busRoutes) => {
     routes.appendChild(routesClone);
   });
 };
+
+const searchRoutes = () => {
+  const search = document.getElementById("search").value.toLowerCase();
+  const filteredRoutes = busRoutes.filter((route) =>
+    route.stoppages.some((stop) => stop.toLowerCase().includes(search))
+  );
+  showRoutes(filteredRoutes);
+};
+
+document.getElementById("search").addEventListener("input", searchRoutes);
 
 showRoutes(busRoutes);

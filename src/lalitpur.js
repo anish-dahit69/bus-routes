@@ -6,7 +6,7 @@ const clone = document.getElementById("clone");
 
 const showRoutes = (busRoutes) => {
   busRoutes.forEach((curElem) => {
-    console.log(curElem);
+    // console.log(curElem);
     const { route_name, stoppages } = curElem;
 
     const routesClone = document.importNode(clone.content, true);
