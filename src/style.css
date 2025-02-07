@@ -150,6 +150,46 @@ nav {
     }
   }
 }
+
+.details .container .price {
+  width: 100%;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.1rem; */
+  background-color: antiquewhite;
+  border-radius: 2rem;
+  margin-top: 2.5rem;
+
+  & h1 {
+    letter-spacing: 0.11rem;
+    padding: 0 1.3rem;
+  }
+
+  & p {
+    padding: 1.3rem;
+    letter-spacing: 0.11rem;
+    line-height: 1.5rem;
+  }
+
+  & .fare{
+    display: flex;
+    flex-direction: column;
+
+    & P{
+      padding: 0.4rem 1.3rem;
+    }
+  
+  }
+}
+
+.details .container .copyright{
+  display: flex;
+  margin-top: 5rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
 /* lalitpur section end */
 
 /* responsive start */
