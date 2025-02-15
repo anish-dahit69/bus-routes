@@ -9,14 +9,17 @@
   padding: 0 3rem;
   margin: 0 auto;
 }
+
 a,
 p {
   text-decoration: none;
   color: black;
 }
+
 li {
   list-style: none;
 }
+
 button {
   padding: 1.2rem;
   border-radius: 1.3rem;
@@ -30,26 +33,32 @@ header {
   align-items: center;
   padding: 0.5rem 0;
 }
+
 .menuList {
   display: flex;
   flex-direction: row;
   list-style: none;
   gap: 20px;
 }
+
 nav {
   display: flex;
   align-items: center;
 }
+
 .menuList a {
   text-decoration: none;
   color: black;
 }
+
 .menuList a:hover {
   text-decoration: underline;
 }
+
 .menuList a:active {
   color: rgb(255, 255, 0);
 }
+
 .x,
 .bar {
   display: none;
@@ -73,6 +82,7 @@ nav {
     display: flex;
     gap: 3rem;
     justify-content: center;
+
     & input {
       border-radius: 1.3rem;
       padding: 0.4rem;
@@ -101,7 +111,7 @@ nav {
     gap: 1rem;
   }
 
-  button{
+  button {
     max-width: 10rem;
     background-color: #000;
     color: white;
@@ -112,6 +122,7 @@ nav {
     /* margin: auto; */
   }
 }
+
 /* search end*/
 
 /* hero section */
@@ -185,6 +196,7 @@ nav {
       background-color: antiquewhite;
       padding: 1.3rem;
       border-radius: 2rem;
+
       & h1 {
         letter-spacing: 0.11rem;
         word-spacing: 0.3rem;
@@ -250,6 +262,7 @@ nav {
   justify-content: center;
   margin-bottom: 4rem;
 }
+
 /* lalitpur section end */
 
 /* responsive start */
@@ -262,15 +275,19 @@ nav {
     top: 40px;
     right: 20px;
   }
+
   .menuList.active {
     display: flex;
   }
+
   .bar {
     display: flex;
   }
+
   .bar.inactive {
     display: none;
   }
+
   .x.active {
     display: flex;
   }

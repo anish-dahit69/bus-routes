@@ -56,4 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   searchButton.addEventListener("click", searchRoutes);
+
+  showRoutes(busRoutes);
 });
