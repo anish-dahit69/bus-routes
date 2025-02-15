@@ -1,97 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>lalitpur</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <header>
-            <div class="logo">Route</div>
-            <nav>
-                <div class="bar">
-                    <i class="ri-menu-4-line" aria-hidden="true"></i>
-                </div>
-                <div class="x">
-                    <i class="ri-close-large-line" aria-hidden="true"></i>
-                </div>
+      <header>
+        <div class="logo">Route</div>
+        <nav>
+          <div class="bar">
+            <i class="ri-menu-4-line" aria-hidden="true"></i>
+          </div>
+          <div class="x">
+            <i class="ri-close-large-line" aria-hidden="true"></i>
+          </div>
 
-                <ul class="menuList">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+          <ul class="menuList">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
     </div>
     <main class="details">
-        <div class="container">
-            <div class="search">
-                <div class="input">
-                    <div class="origin">
-                        <p>Origin</p>
-                        <input type="text" class="origin">
-                    </div>
-
-                    <div class="destination">
-                        <p>Destination</p>
-                        <input type="text" class="destination">
-                    </div>
-                </div>
-                <button onclick="searchRoutes()">Search Routes</button>
-
+      <div class="container">
+        <div class="search">
+          <div class="input">
+            <div class="origin">
+              <p>Origin</p>
+              <input type="text" class="origin" />
             </div>
 
-
-            <div class="routes-details">
-
+            <div class="destination">
+              <p>Destination</p>
+              <input type="text" class="destination" />
             </div>
-
-            <template id="clone">
-                <div class="route-page">
-                    <div class="head">
-                        <h1 class="route-head"></h1>
-                    </div>
-                    <div class="bus-stop">
-                        <p class="list"></p>
-                    </div>
-                </div>
-            </template>
-
-            <!-- price section -->
-
-            <div class="price">
-                <h1>
-                    Kathmandu Local Bus Fares
-                </h1>
-                <p>Here is the current bus fares within Kathmandu based on distance traveled. We recommend consulting
-                    local authorities or public transportation stuffs for the most recent fare information.</p>
-                <div class="fare">
-                    <p>
-                        Up to 5 km: Rs. 20
-                    </p>
-                    <p>
-                        5 - 10 km: Rs. 25
-                    </p>
-                    <p>
-                        10 - 15 km: Rs. 30
-                    </p>
-                    <p> 15 - 20 km: Rs. 33</p>
-                </div>
-            </div>
-            <div class="copyright">
-                <span>©2025routes</span>
-            </div>
+          </div>
+          <button onclick="searchRoutes()">Search Routes</button>
         </div>
+
+        <div class="routes-details"></div>
+
+        <template id="clone">
+          <div class="route-page">
+            <div class="head">
+              <h1 class="route-head"></h1>
+            </div>
+            <div class="bus-stop">
+              <p class="list"></p>
+            </div>
+          </div>
+        </template>
+
+        <!-- price section -->
+
+        <div class="price">
+          <h1>Kathmandu Local Bus Fares</h1>
+          <p>
+            Here is the current bus fares within Kathmandu based on distance
+            traveled. We recommend consulting local authorities or public
+            transportation stuffs for the most recent fare information.
+          </p>
+          <div class="fare">
+            <p>Up to 5 km: Rs. 20</p>
+            <p>5 - 10 km: Rs. 25</p>
+            <p>10 - 15 km: Rs. 30</p>
+            <p>15 - 20 km: Rs. 33</p>
+          </div>
+        </div>
+        <div class="copyright">
+          <span>©2025routes</span>
+        </div>
+      </div>
     </main>
 
-
     <script type="module" src="/src/kathmandu.js"></script>
-
-</body>
-
+  </body>
 </html>

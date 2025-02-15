@@ -1,42 +1,56 @@
 import "remixicon/fonts/remixicon.css";
-
 import busRoutes from "../api/ktm.json";
-const routes = document.querySelector(".routes-details");
-const clone = document.getElementById("clone");
 
-const showRoutes = (busRoutes) => {
-  routes.innerHTML = ""; // Clear previous routes
-  busRoutes.forEach((curElem) => {
-    const { route_name, stoppages } = curElem;
+document.addEventListener("DOMContentLoaded", () => {
+  const routes = document.querySelector(".routes-details");
+  const clone = document.getElementById("clone");
 
-    const routesClone = document.importNode(clone.content, true);
+  const showRoutes = (busRoutes) => {
+    routes.innerHTML = ""; // Clear previous routes
+    busRoutes.forEach((curElem) => {
+      const { route_name, stoppages } = curElem;
 
-    routesClone.querySelector(
-      ".route-head"
-    ).textContent = `${route_name} bus routes`;
+      const routesClone = document.importNode(clone.content, true);
 
-    const busStop = routesClone.querySelector(".list");
-    busStop.innerHTML = stoppages
-      .map((stop, index) => {
-        if (index === stoppages.length - 1) {
-          return stop;
-        }
-        return `${stop} <i class="ri-expand-horizontal-s-line" style="color: red; font-size: 1.5rem; position: relative; bottom: -0.1rem;"></i> `;
-      })
-      .join("");
+      routesClone.querySelector(
+        ".route-head"
+      ).textContent = `${route_name} bus routes`;
 
-    routes.appendChild(routesClone);
-  });
-};
+      const busStop = routesClone.querySelector(".list");
+      busStop.innerHTML = stoppages
+        .map((stop, index) => {
+          if (index === stoppages.length - 1) {
+            return stop;
+          }
+          return `${stop} <i class="ri-expand-horizontal-s-line" style="color: red; font-size: 1.5rem; position: relative; bottom: -0.1rem;"></i>`;
+        })
+        .join("");
 
-const searchRoutes = () => {
-  const search = document.getElementById("search").value.toLowerCase();
-  const filteredRoutes = busRoutes.filter((route) =>
-    route.stoppages.some((stop) => stop.toLowerCase().includes(search))
-  );
-  showRoutes(filteredRoutes);
-};
+      routes.appendChild(routesClone);
+    });
+  };
 
-document.getElementById("search").addEventListener("input", searchRoutes);
+  const searchRoutes = () => {
+    const origin = document.querySelector(".origin input").value.toLowerCase();
+    const destination = document
+      .querySelector(".destination input")
+      .value.toLowerCase();
 
-showRoutes(busRoutes);
+    const filteredRoutes = busRoutes.filter(
+      (route) =>
+        route.stoppages.some((stop) => stop.toLowerCase().includes(origin)) &&
+        route.stoppages.some((stop) => stop.toLowerCase().includes(destination))
+    );
+
+    showRoutes(filteredRoutes);
+  };
+
+  document
+    .querySelector(".origin input")
+    .addEventListener("input", searchRoutes);
+  document
+    .querySelector(".destination input")
+    .addEventListener("input", searchRoutes);
+
+  showRoutes(busRoutes);
+});
