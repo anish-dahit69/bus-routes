@@ -4,18 +4,23 @@ import busRoutes from "../api/ktm.json";
 document.addEventListener("DOMContentLoaded", () => {
   const routes = document.querySelector(".routes-details");
   const clone = document.getElementById("clone");
+  const searchButton = document.querySelector("button");
 
   const showRoutes = (busRoutes) => {
-    routes.innerHTML = ""; // Clear previous routes
+    routes.innerHTML = ""; // Clear previous results
+
+    if (busRoutes.length === 0) {
+      routes.innerHTML = "<p>No routes found.</p>";
+      return;
+    }
+
     busRoutes.forEach((curElem) => {
       const { route_name, stoppages } = curElem;
-
       const routesClone = document.importNode(clone.content, true);
 
       routesClone.querySelector(
         ".route-head"
       ).textContent = `${route_name} bus routes`;
-
       const busStop = routesClone.querySelector(".list");
       busStop.innerHTML = stoppages
         .map((stop, index) => {
@@ -36,6 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
       .querySelector(".destination input")
       .value.toLowerCase();
 
+    if (!origin || !destination) {
+      routes.innerHTML = "<p>Please enter both origin and destination.</p>";
+      return;
+    }
+
     const filteredRoutes = busRoutes.filter(
       (route) =>
         route.stoppages.some((stop) => stop.toLowerCase().includes(origin)) &&
@@ -45,12 +55,5 @@ document.addEventListener("DOMContentLoaded", () => {
     showRoutes(filteredRoutes);
   };
 
-  document
-    .querySelector(".origin input")
-    .addEventListener("input", searchRoutes);
-  document
-    .querySelector(".destination input")
-    .addEventListener("input", searchRoutes);
-
-  showRoutes(busRoutes);
+  searchButton.addEventListener("click", searchRoutes);
 });
