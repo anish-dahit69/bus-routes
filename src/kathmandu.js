@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const clone = document.getElementById("clone");
   const searchButton = document.querySelector("button");
 
-  const showRoutes = (busRoutes) => {
+  const showRoutes = (busRoutes, origin, destination) => {
     routes.innerHTML = ""; // Clear previous results
 
     if (busRoutes.length === 0) {
@@ -21,15 +21,33 @@ document.addEventListener("DOMContentLoaded", () => {
       routesClone.querySelector(
         ".route-head"
       ).textContent = `${route_name} bus routes`;
+
       const busStop = routesClone.querySelector(".list");
-      busStop.innerHTML = stoppages
-        .map((stop, index) => {
-          if (index === stoppages.length - 1) {
-            return stop;
-          }
-          return `${stop} <i class="ri-expand-horizontal-s-line" style="color: red; font-size: 1.5rem; position: relative; bottom: -0.1rem;"></i>`;
-        })
-        .join("");
+      const lowerStoppages = stoppages.map((stop) => stop.toLowerCase());
+      const originIndex = lowerStoppages.indexOf(origin);
+      const destinationIndex = lowerStoppages.indexOf(destination);
+
+      if (
+        originIndex !== -1 &&
+        destinationIndex !== -1 &&
+        originIndex < destinationIndex
+      ) {
+        busStop.innerHTML = stoppages
+          .map((stop, index) => {
+            const isHighlighted =
+              index >= originIndex && index <= destinationIndex;
+            return isHighlighted
+              ? `<strong style='color:blue;'>${stop}</strong>`
+              : stop;
+          })
+          .join(
+            " <i class='ri-expand-horizontal-s-line' style='color: red; font-size: 1.5rem; position: relative; bottom: -0.1rem;'></i> "
+          );
+      } else {
+        busStop.innerHTML = stoppages.join(
+          " <i class='ri-expand-horizontal-s-line' style='color: red; font-size: 1.5rem; position: relative; bottom: -0.1rem;'></i> "
+        );
+      }
 
       routes.appendChild(routesClone);
     });
@@ -52,10 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
         route.stoppages.some((stop) => stop.toLowerCase().includes(destination))
     );
 
-    showRoutes(filteredRoutes);
+    showRoutes(filteredRoutes, origin, destination);
   };
 
   searchButton.addEventListener("click", searchRoutes);
 
-  showRoutes(busRoutes);
+  showRoutes(busRoutes, "", "");
 });
